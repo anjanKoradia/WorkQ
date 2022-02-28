@@ -1,0 +1,27 @@
+/* Google Font (Lato) */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  height: 1000px;
+}
+
+button {
+  outline: none !important;
+}
+
+/* -------------------- Navbar Styling Start -------------------- */
+.navbar .navbar-nav li {
+  margin: 0 0.5rem;
+  font-size: 17px;
+}
+.navbar .navbar-nav li .dropdown-menu .dropdown_menu_items {
+  display: flex;
+}
+/* -------------------- Navbar Styling End -------------------- */
