@@ -9,7 +9,6 @@
 
 body {
   font-family: "Lato", sans-serif;
-  height: 1000px;
 }
 
 button {
@@ -17,11 +16,24 @@ button {
 }
 
 /* -------------------- Navbar Styling Start -------------------- */
-.navbar .navbar-nav li {
-  margin: 0 0.5rem;
-  font-size: 17px;
-}
-.navbar .navbar-nav li .dropdown-menu .dropdown_menu_items {
-  display: flex;
+.navbar {
+  .navbar-nav {
+    li {
+      margin: 0 0.5rem;
+      font-size: 17px;
+
+      .dropdown-menu {
+        .dropdown_menu_items {
+          display: flex;
+        }
+      }
+    }
+  }
 }
 /* -------------------- Navbar Styling End -------------------- */
+
+/* -------------------- SignUp Page Styling Start -------------------- */
+.signUp_container {
+  height: calc(100vh - 72px);
+}
+/* -------------------- SignUp Page Styling End -------------------- */
