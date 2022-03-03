@@ -25,8 +25,8 @@ button {
 
 /* -------------------- Navbar Styling End -------------------- */
 /* -------------------- SignUp Page Styling Start -------------------- */
-.auth_container,
-.signUp_container {
+.signUp_container,
+.login_container {
   height: calc(100vh - 72px);
 }
 

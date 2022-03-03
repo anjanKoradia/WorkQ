@@ -10,4 +10,9 @@ const signUpStep2Validator = Joi.object({
     password: Joi.string().required(),
 });
 
-module.exports = { signUpStep1Validator, signUpStep2Validator };
+const loginValidator = Joi.object({
+    email: Joi.string().required(),
+    password: Joi.string().required(),
+});
+
+module.exports = { signUpStep1Validator, signUpStep2Validator, loginValidator };
