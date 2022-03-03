@@ -1,16 +1,30 @@
-<%- include("../authNav") %>
+<%- include("./nav") %>
 
 <section class="signUp_container">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-9 col-lg-7 col-xl-4">
+        <% if(messages.error){ %>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <%= messages.error %>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <% } %>
         <div class="card">
           <div class="card-body p-5">
             <div class="title mb-5">
               <h4>Join Into WorkQ</h4>
               <p>Enter your details and join with us.</p>
             </div>
-            <form method="POST" action="/authentication/signup/email">
+            <form method="POST" action="/authentication/signup/step2">
               <div class="mb-3">
                 <label for="inputUsername" class="form-label">Username</label>
                 <input
@@ -18,7 +32,7 @@
                   name="username"
                   class="form-control"
                   id="inputUsername"
-                  placeholder="Abcd1234@"
+                  placeholder="Abcd1234"
                 />
               </div>
               <div class="mb-3">
@@ -30,7 +44,7 @@
                   name="password"
                   class="form-control"
                   id="inputPassword"
-                  placeholder="Min 4 chr, 1 letter & 1 number"
+                  placeholder="Min 8 chr, 1 letter & 1 number"
                 />
               </div>
               <div class="my-4">
