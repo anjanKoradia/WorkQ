@@ -22,6 +22,12 @@ button {
 .navbar .navbar-nav li .dropdown-menu .dropdown_menu_items {
   display: flex;
 }
+.navbar .profile_dropdown .nav-link {
+  color: #000000;
+}
+.navbar .profile_dropdown .dropdown-menu[data-bs-popper] {
+  left: -100px !important;
+}
 
 /* -------------------- Navbar Styling End -------------------- */
 /* -------------------- SignUp Page Styling Start -------------------- */
@@ -31,3 +37,51 @@ button {
 }
 
 /* -------------------- SignUp Page Styling End -------------------- */
+/* -------------------- Home Page Styling Start -------------------- */
+.home_container .container {
+  height: calc(100vh - 75px);
+}
+.home_container .container .home_details {
+  flex: 0.5;
+}
+.home_container .container .home_details > h1 {
+  font-size: 48px;
+}
+.home_container .container .home_details .search .form-control {
+  padding: 10px;
+  outline: none !important;
+}
+.home_container .container .home_details .popular_srh .btn {
+  font-size: 12px;
+  padding: 2px 6px;
+}
+.home_container .container .hero_img {
+  flex: 0.5;
+}
+.home_container .container .hero_img .q_img_container {
+  position: relative;
+}
+.home_container .container .hero_img .q_img_container .q_image {
+  background-size: cover;
+  border-radius: 50% !important;
+  background-position: 50% 50%;
+}
+.home_container .container .hero_img .q_img_container .q_image_1 {
+  position: absolute;
+  top: -210px;
+  left: 100px;
+  width: 425px;
+  height: 425px;
+  background-image: url("/images/q-img-1.jpg");
+}
+.home_container .container .hero_img .q_img_container .q_image_2 {
+  position: absolute;
+  right: 60px;
+  top: 80px;
+  width: 200px;
+  height: 200px;
+  background-image: url("/images/q-img-2.jpg");
+  border: 12px solid white;
+}
+
+/* -------------------- Home Page Styling End -------------------- */

@@ -1,3 +1,4 @@
+const homeController = require("../app/http/controllers/homeController");
 const loginController = require("../app/http/controllers/auth/loginController");
 const signUpController = require("../app/http/controllers/auth/signUpController")
 
@@ -5,6 +6,8 @@ const signUpController = require("../app/http/controllers/auth/signUpController"
 const guest = require("../app/http/middleware/guest");
 
 function initRoutes(app) {
+
+    app.get("/", homeController().index);
 
     //signup
     app.get("/authentication/signup/step1", guest, signUpController().index1);

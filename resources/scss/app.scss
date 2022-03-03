@@ -29,6 +29,14 @@ button {
       }
     }
   }
+  .profile_dropdown {
+    .nav-link {
+      color: #000000;
+    }
+    .dropdown-menu[data-bs-popper] {
+      left: -100px !important;
+    }
+  }
 }
 /* -------------------- Navbar Styling End -------------------- */
 
@@ -38,3 +46,61 @@ button {
   height: calc(100vh - 72px);
 }
 /* -------------------- SignUp Page Styling End -------------------- */
+
+/* -------------------- Home Page Styling Start -------------------- */
+.home_container {
+  .container {
+    height: calc(100vh - 75px);
+
+    .home_details {
+      flex: 0.5;
+
+      > h1 {
+        font-size: 48px;
+      }
+      .search {
+        .form-control {
+          padding: 10px;
+          outline: none !important;
+        }
+      }
+      .popular_srh {
+        .btn {
+          font-size: 12px;
+          padding: 2px 6px;
+        }
+      }
+    }
+    .hero_img {
+      flex: 0.5;
+
+      .q_img_container {
+        position: relative;
+
+        .q_image {
+          background-size: cover;
+          border-radius: 50% !important;
+          background-position: 50% 50%;
+        }
+        .q_image_1 {
+          position: absolute;
+          top: -210px;
+          left: 100px;
+          width: 425px;
+          height: 425px;
+          background-image: url("/images/q-img-1.jpg");
+        }
+        .q_image_2 {
+          position: absolute;
+          right: 60px;
+          top: 80px;
+          width: 200px;
+          height: 200px;
+          background-image: url("/images/q-img-2.jpg");
+          border: 12px solid white;
+        }
+      }
+    }
+  }
+}
+/* -------------------- Home Page Styling End -------------------- */
