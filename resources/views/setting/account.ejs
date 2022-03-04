@@ -27,10 +27,15 @@
       <nav class="navbar">
         <ul class="navbar-nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Account</a>
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="/setting/account"
+              >Account</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Security</a>
+            <a class="nav-link" href="/setting/security">Security</a>
           </li>
         </ul>
       </nav>
@@ -42,7 +47,7 @@
           >
         </p>
         <hr class="dropdown-divider my-4" />
-        <form method="POST" action="/setting/account">
+        <form method="POST" action="/setting/account" class="mt-5">
           <div class="row mb-3">
             <label for="inputUsername" class="col-sm-4 col-form-label"
               >Username</label

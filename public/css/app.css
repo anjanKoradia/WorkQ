@@ -86,29 +86,37 @@ button {
 
 /* -------------------- Home Page Styling End -------------------- */
 /* -------------------- Account Page Styling Start -------------------- */
-.account_container {
+.account_container,
+.security_container {
   background-color: whitesmoke;
   min-height: calc(100vh - 75px);
 }
-.account_container .navbar {
+.account_container .navbar,
+.security_container .navbar {
   flex: 0.2;
 }
-.account_container .navbar .navbar-nav .nav-link {
+.account_container .navbar .navbar-nav .nav-link,
+.security_container .navbar .navbar-nav .nav-link {
   padding: 0;
   text-decoration: none;
   color: #0000008c;
 }
-.account_container .navbar .navbar-nav .nav-link.active {
+.account_container .navbar .navbar-nav .nav-link.active,
+.security_container .navbar .navbar-nav .nav-link.active {
   color: #000000;
 }
-.account_container .account_details {
+.account_container .account_details,
+.account_container .security_details,
+.security_container .account_details,
+.security_container .security_details {
   flex: 0.8;
   background-color: white;
   border: #e7e5e5 solid 1px;
   border-radius: 5px;
 }
-.account_container .account_details form label {
-  text-transform: uppercase;
+.account_container .account_details form label,
+.security_container .account_details form label {
+  text-transform: capitalize;
 }
 
 /* -------------------- Account Page Styling End -------------------- */

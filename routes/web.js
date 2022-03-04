@@ -2,6 +2,7 @@ const homeController = require("../app/http/controllers/homeController");
 const loginController = require("../app/http/controllers/auth/loginController");
 const signUpController = require("../app/http/controllers/auth/signUpController")
 const accountController = require("../app/http/controllers/setting/accountController")
+const securityController = require("../app/http/controllers/setting/securityController")
 
 // Middleware
 const guest = require("../app/http/middleware/guest");
@@ -29,6 +30,9 @@ function initRoutes(app) {
     app.post("/setting/account", accountController().postData);
     app.post("/setting/account/deactivate", accountController().deactivate)
 
+    // security
+    app.get("/setting/security", securityController().index);
+    app.post("/setting/security", securityController().changePassword);
 }
 
 module.exports = initRoutes;
