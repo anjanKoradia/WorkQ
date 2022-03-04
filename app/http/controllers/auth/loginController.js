@@ -38,6 +38,10 @@ function loginController() {
                     return res.redirect("/");
                 });
             })(req, res, next);
+        },
+        logout: (req, res) => {
+            req.logout();
+            return res.redirect("/");
         }
     }
 }

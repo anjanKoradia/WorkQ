@@ -21,6 +21,8 @@ function initRoutes(app) {
     // login
     app.get("/authentication/login", guest, loginController().index);
     app.post("/authentication/login", loginController().login);
+    app.post("/logout", loginController().logout);
+
 
     // setting
     app.get("/setting/account", accountController().index);
