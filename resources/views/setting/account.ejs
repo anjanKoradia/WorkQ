@@ -142,6 +142,33 @@
             <button type="submit" class="btn btn-success">Save Changes</button>
           </div>
         </form>
+        <hr class="dropdown-divider my-5" />
+        <div class="account_delete">
+          <div class="row">
+            <div class="col-4">
+              <p class="mb-0 text-uppercase">Account Deactivation</p>
+            </div>
+            <div class="col-8">
+              <p class="mb-0 fw-bold">
+                What happens when you deactivate your account?
+              </p>
+              <ul>
+                <li>Your profile and works won't be shown on WorkQ anymore.</li>
+                <li>Active or Pending works will be cancelled.</li>
+                <li>You won't be able to re-activate your account.</li>
+              </ul>
+            </div>
+          </div>
+          <form
+            action="/setting/account/deactivate"
+            method="POST"
+            class="float-end"
+          >
+            <button type="submit" class="btn btn-danger mt-4">
+              Deactivate Account
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

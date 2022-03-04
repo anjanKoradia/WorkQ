@@ -52,6 +52,10 @@ function accountController() {
 
             req.flash("success", "Details saved successfully.")
             return res.redirect("/setting/account");
+        },
+        deactivate: async (req, res) => {
+            let user = await User.findOneAndRemove({ _id: req.user._id });
+            return res.redirect('/');
         }
     }
 }

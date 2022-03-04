@@ -27,6 +27,7 @@ function initRoutes(app) {
     // setting
     app.get("/setting/account", accountController().index);
     app.post("/setting/account", accountController().postData);
+    app.post("/setting/account/deactivate", accountController().deactivate)
 
 }
 
