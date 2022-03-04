@@ -7,13 +7,11 @@ const userSchema = new Schema(
         email: { type: String, unique: true },
         password: { type: String, require: true },
         details: {
-            firstName: { type: String, require: true },
-            lastName: { type: String, require: true },
+            name: { type: String, require: true },
             address: { type: String, require: true },
             city: { type: String, require: true },
             state: { type: String, require: true },
-            zipcode: { type: Number, require: true },
-            role: { type: String, default: "user" },
+            zipcode: { type: String, require: true },
         }
     },
     { timestamps: true }

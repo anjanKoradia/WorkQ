@@ -104,3 +104,36 @@ button {
   }
 }
 /* -------------------- Home Page Styling End -------------------- */
+
+/* -------------------- Account Page Styling Start -------------------- */
+.account_container {
+  background-color: whitesmoke;
+  min-height: calc(100vh - 75px);
+
+  .navbar {
+    flex: 0.2;
+    .navbar-nav {
+      .nav-link {
+        padding: 0;
+        text-decoration: none;
+        color: #0000008c;
+      }
+      .nav-link.active {
+        color: #000000;
+      }
+    }
+  }
+  .account_details {
+    flex: 0.8;
+    background-color: white;
+    border: rgb(231, 229, 229) solid 1px;
+    border-radius: 5px;
+
+    form {
+      label {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+/* -------------------- Account Page Styling End -------------------- */

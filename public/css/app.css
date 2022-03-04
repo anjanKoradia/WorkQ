@@ -85,3 +85,30 @@ button {
 }
 
 /* -------------------- Home Page Styling End -------------------- */
+/* -------------------- Account Page Styling Start -------------------- */
+.account_container {
+  background-color: whitesmoke;
+  min-height: calc(100vh - 75px);
+}
+.account_container .navbar {
+  flex: 0.2;
+}
+.account_container .navbar .navbar-nav .nav-link {
+  padding: 0;
+  text-decoration: none;
+  color: #0000008c;
+}
+.account_container .navbar .navbar-nav .nav-link.active {
+  color: #000000;
+}
+.account_container .account_details {
+  flex: 0.8;
+  background-color: white;
+  border: #e7e5e5 solid 1px;
+  border-radius: 5px;
+}
+.account_container .account_details form label {
+  text-transform: uppercase;
+}
+
+/* -------------------- Account Page Styling End -------------------- */

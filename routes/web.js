@@ -1,6 +1,7 @@
 const homeController = require("../app/http/controllers/homeController");
 const loginController = require("../app/http/controllers/auth/loginController");
 const signUpController = require("../app/http/controllers/auth/signUpController")
+const accountController = require("../app/http/controllers/setting/accountController")
 
 // Middleware
 const guest = require("../app/http/middleware/guest");
@@ -20,6 +21,10 @@ function initRoutes(app) {
     // login
     app.get("/authentication/login", guest, loginController().index);
     app.post("/authentication/login", loginController().login);
+
+    // setting
+    app.get("/setting/account", accountController().index);
+    app.post("/setting/account", accountController().postData);
 
 }
 

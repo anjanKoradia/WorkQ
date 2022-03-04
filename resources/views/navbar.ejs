@@ -3,17 +3,10 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container">
       <div class="logo">
-        <a class="navbar-brand fs-4" href="/">WorkQ.</a>
+        <a class="navbar-brand fs-5" href="/">WorkQ.</a>
       </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,55 +15,35 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Explore
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <div class="dropdown_menu_items">
                 <div>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-broom"></i> Cleaning</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-broom"></i> Cleaning</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-subway"></i> Transportation</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-subway"></i> Transportation</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="lab la-envira"></i> Environmental</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="lab la-envira"></i> Environmental</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-baby"></i> Body Care</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-baby"></i> Body Care</a>
                   </li>
                 </div>
                 <div>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-first-aid"></i> Rescue</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-first-aid"></i> Rescue</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-truck"></i> Delivery</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-truck"></i> Delivery</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      ><i class="las la-universal-access"></i> Social Impact</a
-                    >
+                    <a class="dropdown-item" href="#"><i class="las la-universal-access"></i> Social Impact</a>
                   </li>
                 </div>
               </div>
@@ -83,48 +56,47 @@
             <a class="nav-link" href="#">Become a Volunteer</a>
           </li>
         </ul>
-        <div class="nav_auth_btns">
-          <a href="/authentication/signup" class="btn btn-light">Sign In</a>
-          <button type="button" class="btn btn-outline-success border-2 px-4">
-            Join
-          </button>
-        </div>
-        <!-- <div class="dropdown dropstart ms-3">
-                <a
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                >
-                  <img
-                    src="/img/Profile.jpg"
-                    class="rounded-circle"
-                    height="30px"
-                    width="30px"
-                    alt=""
-                  />
+        <% if(user) { %>
+          <div class="profile_dropdown dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="/images/Profile.jpg" class="rounded-circle" height="25px" width="25px" alt="" />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a href="#" class="dropdown-item">
+                  <p class="mb-0">Signed in as</p>
+                  <b><%= user.username %></b>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <p class="mb-0">Signed in as</p>
-                      <b>anjanKoradia</b>
-                    </a>
-                  </li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Setting</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">English <i class="las la-globe"></i></a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"><i class="las la-rupee-sign"> </i>INR</i></a>
-                  </li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
-        </div> -->
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/setting/account">Setting</a></li>
+              <li>
+                <a class="dropdown-item">English <i class="las la-globe"></i></a>
+              </li>
+              <li>
+                <a class="dropdown-item"><i class="las la-rupee-sign"> </i>INR</i></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+          <% } else { %>
+            <div class="nav_auth_btns">
+              <a href="/authentication/login" class="btn btn-light">Sign In</a>
+              <a href="/authentication/signup/step1" class="btn btn-outline-success border-2 px-4">
+                Join
+              </a>
+            </div>
+            <% } %>
       </div>
     </div>
   </nav>

@@ -1,0 +1,148 @@
+<%- include("../navbar") %>
+
+<section class="account_container">
+  <div class="container w-75 py-5">
+    <% if(messages.error){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= messages.error %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %> <% if(messages.success){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= messages.success %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %>
+    <div class="d-flex align-items-start">
+      <nav class="navbar">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Security</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="account_details p-5">
+        <p class="text-end mb-0">
+          Need to update your public profile?
+          <a href="/profile" class="text-decoration-none text-success"
+            >Go to My Profile</a
+          >
+        </p>
+        <hr class="dropdown-divider my-4" />
+        <form method="POST" action="/setting/account">
+          <div class="row mb-3">
+            <label for="inputUsername" class="col-sm-4 col-form-label"
+              >Username</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                name="username"
+                value="<%= user.username%>"
+                class="form-control"
+                id="inputUsername"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputEmail" class="col-sm-4 col-form-label"
+              >Email</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="email"
+                name="email"
+                value="<%= user.email%>"
+                class="form-control"
+                id="inputEmail"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputName" class="col-sm-4 col-form-label"
+              >Full Name</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                name="name"
+                value="<%= user.details.name %>"
+                class="form-control"
+                id="inputName"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputAddress" class="col-sm-4 col-form-label"
+              >Address</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                name="address"
+                value="<%= user.details.address %>"
+                class="form-control"
+                id="inputAddress"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputCity" class="col-sm-4 col-form-label">City</label>
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="city"
+                value="<%= user.details.city %>"
+                class="form-control"
+                id="inputCity"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputState" class="col-sm-4 col-form-label"
+              >State</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="state"
+                value="<%= user.details.state %>"
+                class="form-control"
+                id="inputState"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputZip" class="col-sm-4 col-form-label">Zip</label>
+            <div class="col-sm-3">
+              <input
+                type="text"
+                name="zipcode"
+                value="<%= user.details.zipcode %>"
+                class="form-control"
+                id="inputZip"
+              />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end mt-4">
+            <button type="reset" class="btn btn-light me-3">Reset</button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
