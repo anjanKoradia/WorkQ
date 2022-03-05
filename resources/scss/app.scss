@@ -140,3 +140,76 @@ button {
   }
 }
 /* -------------------- Account Page Styling End -------------------- */
+
+/* -------------------- Post Work Page Styling Start -------------------- */
+.post_work_btn_container {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+}
+
+.postWork_container {
+  background-color: whitesmoke;
+
+  .container {
+    min-height: calc(100vh - 75px);
+
+    .work_img_container {
+      flex: 0.3;
+      border: 2px dashed rgb(231, 229, 229);
+      border-radius: 10px;
+      height: 300px;
+      background-color: white;
+
+      i {
+        font-size: 4rem;
+        color: rgb(231, 229, 229);
+      }
+
+      p {
+        .browse_btn {
+          font-weight: bold;
+          cursor: pointer;
+          color: blue;
+        }
+      }
+
+      .drop_zone_thumb {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        background-color: transparentize($color: green, $amount: 0.9);
+
+        &::after {
+          content: attr(data-label);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 5px 0;
+          color: #ffffff;
+          background: rgba(0, 0, 0, 0.75);
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+    .work_details {
+      flex: 0.6;
+      background-color: white;
+      border: rgb(231, 229, 229) solid 1px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.draged {
+  background-color: transparentize($color: green, $amount: 0.9);
+  border: 2px dashed green !important;
+}
+/* -------------------- Post Work Page Styling End -------------------- */

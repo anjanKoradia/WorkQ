@@ -1,0 +1,107 @@
+<%- include("../navbar") %>
+
+<section class="postWork_container">
+  <div class="container w-75 py-5">
+    <% if(messages.error){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= messages.error %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %> <% if(messages.success){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= messages.success %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %>
+    <div class="d-flex align-items-start justify-content-between">
+      <div
+        class="work_img_container d-flex align-items-center justify-content-center flex-column p-2"
+      >
+        <i class="las la-file-image"></i>
+        <p class="my-2">
+          Drop your image here or, <span class="browse_btn">Browse</span>
+        </p>
+      </div>
+      <div class="work_details p-5">
+        <h5 class="mb-5">Post Work To Find Volunteer :</h5>
+        <form
+          action="/volunteering/work/post"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input type="file" name="work_img" id="fileInput" class="d-none" />
+          <div class="row mb-3">
+            <label for="inputTitle" class="col-sm-4 col-form-label"
+              >Title</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                name="title"
+                class="form-control"
+                id="inputTitle"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputSubTitle" class="col-sm-4 col-form-label"
+              >Sub-Title</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                name="subtitle"
+                class="form-control"
+                id="inputSubTitle"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputDescription" class="col-sm-4 col-form-label"
+              >Description</label
+            >
+            <div class="col-sm-8">
+              <textarea
+                name="description"
+                class="form-control"
+                id="inputDescription"
+                rows="5"
+                class="w-100"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputCategory" class="col-sm-4 col-form-label"
+              >Category</label
+            >
+            <div class="col-sm-8">
+              <select class="form-select" name="category" id="inputCategory">
+                <option selected value="other">Other</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="transporation">Transporation</option>
+                <option value="environmental">Environmental</option>
+                <option value="bodycare">Body Care</option>
+                <option value="rescue">Rescue</option>
+                <option value="delivery">Delivery</option>
+                <option value="socialimpact">Social Impact</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success float-end mt-4">
+            Post Work
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

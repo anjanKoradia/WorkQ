@@ -6,6 +6,7 @@ const securityController = require("../app/http/controllers/setting/securityCont
 
 // Middleware
 const guest = require("../app/http/middleware/guest");
+const workController = require("../app/http/controllers/workController");
 
 function initRoutes(app) {
 
@@ -33,6 +34,11 @@ function initRoutes(app) {
     // security
     app.get("/setting/security", securityController().index);
     app.post("/setting/security", securityController().changePassword);
+
+
+    // Post volunteering work
+    app.get("/volunteering/work/post", workController().index);
+    app.post("/volunteering/work/post", workController().postWork);
 }
 
 module.exports = initRoutes;

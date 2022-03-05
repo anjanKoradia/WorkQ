@@ -120,3 +120,68 @@ button {
 }
 
 /* -------------------- Account Page Styling End -------------------- */
+/* -------------------- Post Work Page Styling Start -------------------- */
+.post_work_btn_container {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+}
+
+.postWork_container {
+  background-color: whitesmoke;
+}
+.postWork_container .container {
+  min-height: calc(100vh - 75px);
+}
+.postWork_container .container .work_img_container {
+  flex: 0.3;
+  border: 2px dashed #e7e5e5;
+  border-radius: 10px;
+  height: 300px;
+  background-color: white;
+}
+.postWork_container .container .work_img_container i {
+  font-size: 4rem;
+  color: #e7e5e5;
+}
+.postWork_container .container .work_img_container p .browse_btn {
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+}
+.postWork_container .container .work_img_container .drop_zone_thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: rgba(0, 128, 0, 0.1);
+}
+.postWork_container .container .work_img_container .drop_zone_thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+.postWork_container .container .work_details {
+  flex: 0.6;
+  background-color: white;
+  border: #e7e5e5 solid 1px;
+  border-radius: 5px;
+}
+
+.draged {
+  background-color: rgba(0, 128, 0, 0.1);
+  border: 2px dashed green !important;
+}
+
+/* -------------------- Post Work Page Styling End -------------------- */

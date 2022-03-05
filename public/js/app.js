@@ -1,13 +1,108 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _work__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./work */ "./resources/js/work.js");
+ // For Tooltip
 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+}); // Volunteering Work
+
+(0,_work__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+/***/ }),
+
+/***/ "./resources/js/work.js":
+/*!******************************!*\
+  !*** ./resources/js/work.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ work)
+/* harmony export */ });
+var imgDropZone = document.querySelector(".work_img_container");
+var browseBtn = document.querySelector(".browse_btn");
+var fileInput = document.querySelector("#fileInput");
+
+function updateThumbnail(file) {
+  var thumbnailElement = imgDropZone.querySelector(".drop_zone_thumb");
+
+  if (imgDropZone.querySelector("i") && imgDropZone.querySelector("p")) {
+    imgDropZone.querySelector("i").remove();
+    imgDropZone.querySelector("p").remove();
+  }
+
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop_zone_thumb");
+    imgDropZone.appendChild(thumbnailElement);
+  }
+
+  thumbnailElement.dataset.label = file.name; // Show thumbnail for image files
+
+  if (file.type.startsWith("image/")) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+
+function work() {
+  if (browseBtn) {
+    browseBtn.addEventListener("click", function () {
+      fileInput.click();
+    });
+  }
+
+  if (fileInput) {
+    fileInput.addEventListener("change", function (e) {
+      if (fileInput.files.length) {
+        updateThumbnail(fileInput.files[0]);
+      }
+    });
+  }
+
+  if (imgDropZone) {
+    imgDropZone.addEventListener("dragover", function (e) {
+      e.preventDefault();
+
+      if (!imgDropZone.classList.contains("draged")) {
+        imgDropZone.classList.add("draged");
+      }
+    });
+    ["dragleave", "drop"].forEach(function (type) {
+      imgDropZone.addEventListener(type, function (e) {
+        imgDropZone.classList.remove("draged");
+      });
+    });
+    imgDropZone.addEventListener("drop", function (e) {
+      e.preventDefault();
+
+      if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        updateThumbnail(e.dataTransfer.files[0]);
+      }
+
+      imgDropZone.classList.remove("draged");
+    });
+  }
+}
 
 /***/ }),
 
@@ -17,7 +112,6 @@
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -83,6 +177,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	
