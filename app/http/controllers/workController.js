@@ -68,6 +68,14 @@ function workController() {
 
                 return res.redirect("/");
             })
+        },
+
+        postedWorks: async (req, res) => {
+            const works = await Work.find({ user_id: req.user._id }, null, {
+                sort: { createdAt: -1 },
+            });
+            console.log(works)
+            return res.render("work/posted", { works: works });
         }
     }
 }

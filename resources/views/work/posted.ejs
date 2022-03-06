@@ -1,0 +1,41 @@
+<%- include("../navbar") %><%- include("./postWorkBtn") %>
+
+<section class="posted_works_container">
+  <div class="container py-5">
+    <h4>Posted Works :</h4>
+    <div class="row row-cols-md-4 g-5 py-4">
+      <% works.forEach((work) => { %>
+      <div class="col">
+        <div class="card">
+          <img src="/<%= work.image %>" class="card-img-top" height="200px" />
+          <div class="card-body border-top">
+            <p class="card-text"><%= work.title %></p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="dropdown dropup">
+                <a
+                  class="text-decoration-none"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="las la-ellipsis-h text-dark"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">View</a></li>
+                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                </ul>
+              </div>
+              <a href="#" class="btn btn-danger"
+                ><i class="las la-trash"></i> Delete</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

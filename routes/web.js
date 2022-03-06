@@ -25,6 +25,9 @@ function initRoutes(app) {
     app.post("/authentication/login", loginController().login);
     app.post("/logout", loginController().logout);
 
+    // profile
+    app.get("/pofile/mywork/posted", workController().postedWorks);
+
 
     // setting
     app.get("/setting/account", accountController().index);

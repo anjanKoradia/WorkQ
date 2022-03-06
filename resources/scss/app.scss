@@ -213,3 +213,23 @@ button {
   border: 2px dashed green !important;
 }
 /* -------------------- Post Work Page Styling End -------------------- */
+.posted_works_container {
+  .container {
+    .row {
+      .card {
+        img {
+          object-fit: cover;
+        }
+        p {
+          font-size: 20px;
+        }
+
+        .dropdown {
+          i {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}
