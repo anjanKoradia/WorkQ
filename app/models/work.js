@@ -10,9 +10,9 @@ const workSchema = new Schema(
         },
         image: { type: String },
         title: { type: String },
-        subtitle: { type: String },
         description: { type: String },
-        category: { type: String }
+        category: { type: String },
+        subcategory: { type: String },
     },
     { timestamps: true }
 );

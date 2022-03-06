@@ -147,7 +147,6 @@ button {
   bottom: 30px;
   right: 40px;
 }
-
 .postWork_container {
   background-color: whitesmoke;
 
@@ -207,12 +206,13 @@ button {
     }
   }
 }
-
 .draged {
   background-color: transparentize($color: green, $amount: 0.9);
   border: 2px dashed green !important;
 }
 /* -------------------- Post Work Page Styling End -------------------- */
+
+/* -------------------- Posted Work Page Styling Start -------------------- */
 .posted_works_container {
   .container {
     .row {
@@ -220,16 +220,20 @@ button {
         img {
           object-fit: cover;
         }
-        p {
-          font-size: 20px;
-        }
 
-        .dropdown {
-          i {
-            font-size: 30px;
+        .card-body {
+          > p {
+            font-size: 20px;
+          }
+
+          .dropdown {
+            i {
+              font-size: 30px;
+            }
           }
         }
       }
     }
   }
 }
+/* -------------------- Posted Work Page Styling End -------------------- */

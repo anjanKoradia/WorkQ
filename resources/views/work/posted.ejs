@@ -9,7 +9,15 @@
         <div class="card">
           <img src="/<%= work.image %>" class="card-img-top" height="200px" />
           <div class="card-body border-top">
-            <p class="card-text"><%= work.title %></p>
+            <p class="card-title"><%= work.title %></p>
+            <div class="d-flex align-items-center mb-4">
+              <p class="card-text mb-0 me-1 badge bg-dark">
+                <%= work.category %>
+              </p>
+              <p class="card-text mb-0 badge bg-secondary">
+                <%= work.subcategory %>
+              </p>
+            </div>
             <div class="d-flex align-items-center justify-content-between">
               <div class="dropdown dropup">
                 <a

@@ -185,13 +185,16 @@ button {
 }
 
 /* -------------------- Post Work Page Styling End -------------------- */
+/* -------------------- Posted Work Page Styling Start -------------------- */
 .posted_works_container .container .row .card img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.posted_works_container .container .row .card p {
+.posted_works_container .container .row .card .card-body > p {
   font-size: 20px;
 }
-.posted_works_container .container .row .card .dropdown i {
+.posted_works_container .container .row .card .card-body .dropdown i {
   font-size: 30px;
 }
+
+/* -------------------- Posted Work Page Styling End -------------------- */

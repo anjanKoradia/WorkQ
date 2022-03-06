@@ -43,17 +43,16 @@ function workController() {
                     return res.redirect("/volunteering/work/post")
                 }
 
-                const { title, subtitle, description, category } = req.body;
+                const { title, description, category, subcategory } = req.body;
 
-                let document;
                 try {
-                    document = await Work.create({
+                    await Work.create({
                         user_id: req.user._id,
                         image: `images/works/${fileName}`,
                         title,
-                        subtitle,
                         description,
-                        category
+                        category: category.charAt(0).toUpperCase() + category.slice(1),
+                        subcategory
                     });
                 } catch (err) {
                     fs.unlink(`${appRoot}/public/images/works/${fileName}`, (err) => {
@@ -74,9 +73,8 @@ function workController() {
             const works = await Work.find({ user_id: req.user._id }, null, {
                 sort: { createdAt: -1 },
             });
-            console.log(works)
             return res.render("work/posted", { works: works });
-        }
+        },
     }
 }
 
