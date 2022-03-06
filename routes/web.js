@@ -42,6 +42,10 @@ function initRoutes(app) {
     // Post volunteering work
     app.get("/volunteering/work/post", workController().index);
     app.post("/volunteering/work/post", workController().postWork);
+
+
+    // Work categories
+    app.get("/volunteering/work/category/all", workController().allWorks);
 }
 
 module.exports = initRoutes;

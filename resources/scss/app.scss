@@ -237,3 +237,40 @@ button {
   }
 }
 /* -------------------- Posted Work Page Styling End -------------------- */
+
+/* -------------------- All Works Page Styling Start -------------------- */
+.all_works_container {
+  .card {
+    img {
+      object-fit: cover;
+    }
+    .owener {
+      img {
+        width: 25px;
+        height: 25px;
+      }
+      .owener_details {
+        p {
+          font-size: 14px;
+
+          &:nth-child(2) {
+            color: #0000008c;
+          }
+        }
+      }
+    }
+    .work_details {
+      > p {
+        font-size: 20px;
+      }
+    }
+    .dropdown {
+      a {
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+/* -------------------- All Works Page Styling End -------------------- */

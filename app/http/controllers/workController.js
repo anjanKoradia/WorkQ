@@ -75,6 +75,19 @@ function workController() {
             });
             return res.render("work/posted", { works: works });
         },
+
+        allWorks: async (req, res) => {
+            const works = await Work.aggregate([{
+                $lookup: {
+                    from: "users",
+                    localField: "user_id",
+                    foreignField: "_id",
+                    as: "user"
+                }
+            }]).exec();
+
+            return res.render("work/category/all", { works: works });
+        }
     }
 }
 
