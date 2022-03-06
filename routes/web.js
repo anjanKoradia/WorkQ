@@ -3,10 +3,11 @@ const loginController = require("../app/http/controllers/auth/loginController");
 const signUpController = require("../app/http/controllers/auth/signUpController")
 const accountController = require("../app/http/controllers/setting/accountController")
 const securityController = require("../app/http/controllers/setting/securityController")
+const workController = require("../app/http/controllers/workController");
 
 // Middleware
 const guest = require("../app/http/middleware/guest");
-const workController = require("../app/http/controllers/workController");
+const user = require("../app/http/middleware/user");
 
 function initRoutes(app) {
 
@@ -26,21 +27,21 @@ function initRoutes(app) {
     app.post("/logout", loginController().logout);
 
     // profile
-    app.get("/pofile/mywork/posted", workController().postedWorks);
+    app.get("/pofile/mywork/posted", user, workController().postedWorks);
 
 
     // setting
-    app.get("/setting/account", accountController().index);
+    app.get("/setting/account", user, accountController().index);
     app.post("/setting/account", accountController().postData);
     app.post("/setting/account/deactivate", accountController().deactivate)
 
     // security
-    app.get("/setting/security", securityController().index);
+    app.get("/setting/security", user, securityController().index);
     app.post("/setting/security", securityController().changePassword);
 
 
     // Post volunteering work
-    app.get("/volunteering/work/post", workController().index);
+    app.get("/volunteering/work/post", user, workController().index);
     app.post("/volunteering/work/post", workController().postWork);
 
 
