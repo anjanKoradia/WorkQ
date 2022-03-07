@@ -75,6 +75,18 @@ function workController() {
             })
             return res.render("work/posted", { works: works });
         },
+
+        category: async (req, res) => {
+            if (req.params.category == "all") {
+                const works = await Work.find().populate("posted_by");
+
+                return res.render("work/category", { works: works });
+            }
+
+            const works = await Work.find({ category: req.params.category }).populate("posted_by");
+
+            return res.render("work/category", { works: works });
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-<%- include("../../navbar") %><%- include("../postWorkBtn") %>
+<%- include("../navbar") %><%- include("./postWorkBtn") %>
 
 <section class="all_works_container">
   <div class="container py-5">
@@ -12,10 +12,10 @@
             <div class="owener d-flex align-items-center">
               <img src="/images/profile.jpg" class="rounded-circle me-2" />
               <div class="owener_details">
-                <p class="mb-0 fw-bold"><%= work.user[0].username %></p>
+                <p class="mb-0 fw-bold"><%= work.posted_by.username %></p>
                 <p class="mb-0">
-                  <%= work.user[0].details.city %>, <%=
-                  work.user[0].details.state %>
+                  <%= work.posted_by.details.city %>, <%=
+                  work.posted_by.details.state %>
                 </p>
               </div>
             </div>
