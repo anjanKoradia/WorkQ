@@ -47,11 +47,11 @@ function workController() {
 
                 try {
                     await Work.create({
-                        user_id: req.user._id,
+                        posted_by: req.user._id,
                         image: `images/works/${fileName}`,
                         title,
                         description,
-                        category: category.charAt(0).toUpperCase() + category.slice(1),
+                        category,
                         subcategory
                     });
                 } catch (err) {
@@ -75,19 +75,6 @@ function workController() {
             })
             return res.render("work/posted", { works: works });
         },
-
-        allWorks: async (req, res) => {
-            const works = await Work.aggregate([{
-                $lookup: {
-                    from: "users",
-                    localField: "user_id",
-                    foreignField: "_id",
-                    as: "user"
-                }
-            }]).exec();
-
-            return res.render("work/category/all", { works: works });
-        }
     }
 }
 
