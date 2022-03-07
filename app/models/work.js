@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const workSchema = new Schema(
     {
-        user_id: {
+        posted_by: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             require: true,
@@ -13,6 +13,11 @@ const workSchema = new Schema(
         description: { type: String },
         category: { type: String },
         subcategory: { type: String },
+        accepted: { type: Boolean, default: false },
+        accepted_by: {
+            type: mongoose.Schema.Types.Date,
+            ref: "User",
+        }
     },
     { timestamps: true }
 );
