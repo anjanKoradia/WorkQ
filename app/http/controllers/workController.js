@@ -65,14 +65,14 @@ function workController() {
                     return res.redirect("/volunteering/work/post");
                 }
 
-                return res.redirect("/");
+                return res.redirect("/pofile/mywork/posted");
             })
         },
 
         postedWorks: async (req, res) => {
-            const works = await Work.find({ user_id: req.user._id }, null, {
+            const works = await Work.find({ user_id: req.user._id, accepted: false }, null, {
                 sort: { createdAt: -1 },
-            });
+            })
             return res.render("work/posted", { works: works });
         },
 
