@@ -221,3 +221,33 @@ button {
 }
 
 /* -------------------- All Works Page Styling End -------------------- */
+/* -------------------- Work Page Styling Start -------------------- */
+.work_details_container {
+  background-color: whitesmoke;
+}
+.work_details_container .container {
+  min-height: calc(100vh - 75px);
+}
+.work_details_container .container .work_img {
+  flex: 0.3;
+  border-radius: 10px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.work_details_container .container .work_detail {
+  flex: 0.6;
+  background-color: white;
+  border: #e7e5e5 solid 1px;
+  border-radius: 5px;
+}
+.work_details_container .container .work_detail h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.work_details_container .container .work_detail p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+/* -------------------- Work Page Styling End -------------------- */

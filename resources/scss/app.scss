@@ -274,3 +274,36 @@ button {
   }
 }
 /* -------------------- All Works Page Styling End -------------------- */
+
+/* -------------------- Work Page Styling Start -------------------- */
+.work_details_container {
+  background-color: whitesmoke;
+
+  .container {
+    min-height: calc(100vh - 75px);
+
+    .work_img {
+      flex: 0.3;
+      border-radius: 10px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .work_detail {
+      flex: 0.6;
+      background-color: white;
+      border: rgb(231, 229, 229) solid 1px;
+      border-radius: 5px;
+
+      h1 {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 20px;
+        text-align: justify;
+      }
+    }
+  }
+}
+/* -------------------- Work Page Styling End -------------------- */

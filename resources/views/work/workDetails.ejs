@@ -1,0 +1,38 @@
+<%- include("../navbar") %><%- include("./postWorkBtn") %>
+
+<section class="work_details_container">
+  <div class="container w-75 py-5">
+    <div class="d-flex align-items-start justify-content-between">
+      <img src="/<%= work.image %>" alt="" class="work_img" />
+      <div class="work_detail p-5">
+        <div class="row mb-3">
+          <h1 class="col-sm-4">Title :</h1>
+          <p class="col-sm-8 mb-0"><%= work.title %></p>
+        </div>
+        <div class="row mb-3">
+          <h1 class="col-sm-4">Description :</h1>
+          <p class="col-sm-8 mb-0"><%= work.description %></p>
+        </div>
+        <div class="row mb-3">
+          <h1 class="col-sm-4">Category :</h1>
+          <p class="col-sm-8 mb-0"><%= work.category %></p>
+        </div>
+        <div class="row mb-3">
+          <h1 class="col-sm-4">Sub-Category :</h1>
+          <p class="col-sm-8 mb-0"><%= work.subcategory %></p>
+        </div>
+        <form
+          id="accept_work"
+          action="/volunteering/work/category/all/<%= work._id %>"
+          method="post"
+        >
+          <a
+            onclick="document.getElementById('accept_work').submit()"
+            class="btn btn-success mt-4 float-end"
+            >Accept Work</a
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

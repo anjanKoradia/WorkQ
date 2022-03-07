@@ -47,6 +47,7 @@ function initRoutes(app) {
 
     // Work categories
     app.get("/volunteering/work/category/:category", workController().category);
+    app.get("/volunteering/work/category/:category/:id", workController().workDetails);
 }
 
 module.exports = initRoutes;
