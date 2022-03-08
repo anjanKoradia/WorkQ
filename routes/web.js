@@ -28,6 +28,7 @@ function initRoutes(app) {
 
     // profile
     app.get("/pofile/mywork/posted", user, workController().postedWorks);
+    app.get("/pofile/mywork/accepted", workController().acceptedWork);
 
 
     // setting
@@ -44,8 +45,9 @@ function initRoutes(app) {
     app.get("/volunteering/work/post", user, workController().index);
     app.post("/volunteering/work/post", workController().postWork);
 
-    // Post work
+    // Accept work
     app.post("/volunteering/work/accept/:id", workController().acceptWork);
+
 
 
     // Work categories

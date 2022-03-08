@@ -1,0 +1,61 @@
+<%- include("../navbar") %><%- include("./postWorkBtn") %>
+
+<section class="accepted_works_container">
+  <div class="container py-5">
+    <h4>Accepted Works :</h4>
+    <div class="row row-cols-md-4 g-5 py-4">
+      <% works.forEach((work) => { %>
+      <div class="col">
+        <div class="card">
+          <img src="/<%= work.image %>" class="card-img-top" height="200px" />
+          <div class="card-body border-top">
+            <div class="owener d-flex align-items-center">
+              <img src="/images/profile.jpg" class="rounded-circle me-2" />
+              <div class="owener_details">
+                <p class="mb-0 fw-bold"><%= work.accepted_by.username %></p>
+                <p class="mb-0">
+                  <%= work.accepted_by.details.city %>, <%=
+                  work.accepted_by.details.state %>
+                </p>
+              </div>
+            </div>
+            <div class="work_details mt-2">
+              <p class="card-title"><%= work.title %></p>
+              <div class="d-flex align-items-center">
+                <p class="card-text mb-0 me-1 badge bg-dark">
+                  <%= work.category %>
+                </p>
+                <p class="card-text mb-0 badge bg-secondary">
+                  <%= work.subcategory %>
+                </p>
+              </div>
+            </div>
+            <div class="dropdown dropup mt-3">
+              <a
+                class="text-decoration-none"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="las la-ellipsis-h text-dark"></i>
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/volunteering/work/category/<%= work.category %>/<%= work._id %>"
+                    >View Details</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

@@ -199,24 +199,30 @@ button {
 
 /* -------------------- Posted Work Page Styling End -------------------- */
 /* -------------------- All Works Page Styling Start -------------------- */
-.all_works_container .card img {
+.all_works_container .card img,
+.accepted_works_container .card img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.all_works_container .card .owener img {
+.all_works_container .card .owener img,
+.accepted_works_container .card .owener img {
   width: 25px;
   height: 25px;
 }
-.all_works_container .card .owener .owener_details p {
+.all_works_container .card .owener .owener_details p,
+.accepted_works_container .card .owener .owener_details p {
   font-size: 14px;
 }
-.all_works_container .card .owener .owener_details p:nth-child(2) {
+.all_works_container .card .owener .owener_details p:nth-child(2),
+.accepted_works_container .card .owener .owener_details p:nth-child(2) {
   color: #0000008c;
 }
-.all_works_container .card .work_details > p {
+.all_works_container .card .work_details > p,
+.accepted_works_container .card .work_details > p {
   font-size: 20px;
 }
-.all_works_container .card .dropdown a i {
+.all_works_container .card .dropdown a i,
+.accepted_works_container .card .dropdown a i {
   font-size: 30px;
 }
 

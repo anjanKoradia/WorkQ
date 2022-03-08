@@ -239,7 +239,8 @@ button {
 /* -------------------- Posted Work Page Styling End -------------------- */
 
 /* -------------------- All Works Page Styling Start -------------------- */
-.all_works_container {
+.all_works_container,
+.accepted_works_container {
   .card {
     img {
       object-fit: cover;

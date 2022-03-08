@@ -8,7 +8,6 @@ function workController() {
         index: (req, res) => {
             return res.render("work/postWork")
         },
-
         postWork: (req, res) => {
             handleMultipartData(req, res, async (err) => {
                 if (err) {
@@ -68,14 +67,18 @@ function workController() {
                 return res.redirect("/pofile/mywork/posted");
             })
         },
+        acceptWork: async (req, res) => {
+            const work = await Work.findById(req.params.id);
 
-        postedWorks: async (req, res) => {
-            const works = await Work.find({ posted_by: req.user._id, accepted: false }, null, {
-                sort: { createdAt: -1 },
-            })
-            return res.render("work/posted", { works: works });
+            work.accepted = true;
+            work.accepted_by = req.user._id;
+
+            work.save();
+
+            return res.redirect("/pofile/mywork/accepted");
         },
 
+        // Display all works and details by their category
         category: async (req, res) => {
             if (req.params.category == "all") {
                 const works = await Work.find({ accepted: false }).populate("posted_by");
@@ -87,9 +90,10 @@ function workController() {
 
             return res.render("work/category", { works: works });
         },
-
         workDetails: async (req, res) => {
             const work = await Work.findById(req.params.id);
+
+            console.log(work);
 
             if (work) {
                 return res.render("work/workDetails", { work: work });
@@ -98,16 +102,21 @@ function workController() {
             return res.redirect("/");
         },
 
-        acceptWork: async (req, res) => {
-            const work = await Work.findById(req.params.id);
+        // Display work posted and accepted by user
+        postedWorks: async (req, res) => {
+            const works = await Work.find({ posted_by: req.user._id, accepted: false }, null, {
+                sort: { createdAt: -1 },
+            })
+            return res.render("work/posted", { works: works });
+        },
+        acceptedWork: async (req, res) => {
+            const works = await Work.find({ accepted_by: req.user._id, accepted: true }, null, {
+                sort: { createdAt: -1 },
+            }).populate("accepted_by");
 
-            work.accepted = true;
-            work.accepted_by = req.user._id;
-
-            work.save();
-
-            return res.redirect("/volunteering/work/accepted");
-        }
+            // console.log(works);
+            return res.render("work/accepted", { works: works });
+        },
     }
 }
 
