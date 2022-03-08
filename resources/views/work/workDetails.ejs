@@ -21,6 +21,7 @@
           <h1 class="col-sm-4">Sub-Category :</h1>
           <p class="col-sm-8 mb-0"><%= work.subcategory %></p>
         </div>
+        <% if(work.accepted == false){ %>
         <form
           id="accept_work"
           action="/volunteering/work/accept/<%= work._id %>"
@@ -32,6 +33,7 @@
             >Accept Work</a
           >
         </form>
+        <% } %>
       </div>
     </div>
   </div>
