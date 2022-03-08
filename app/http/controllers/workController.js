@@ -70,7 +70,7 @@ function workController() {
         },
 
         postedWorks: async (req, res) => {
-            const works = await Work.find({ user_id: req.user._id, accepted: false }, null, {
+            const works = await Work.find({ posted_by: req.user._id, accepted: false }, null, {
                 sort: { createdAt: -1 },
             })
             return res.render("work/posted", { works: works });
@@ -78,7 +78,7 @@ function workController() {
 
         category: async (req, res) => {
             if (req.params.category == "all") {
-                const works = await Work.find().populate("posted_by");
+                const works = await Work.find({ accepted: false }).populate("posted_by");
 
                 return res.render("work/category", { works: works });
             }
