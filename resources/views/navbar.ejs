@@ -43,7 +43,7 @@
                     <a class="dropdown-item" href="/volunteering/work/category/delivery"><i class="las la-truck"></i> Delivery</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/volunteering/work/category/socialimpact"><i class="las la-universal-access"></i> Social Impact</a>
+                    <a class="dropdown-item" href="/volunteering/work/category/donation"><i class="las la-universal-access"></i> Donation</a>
                   </li>
                 </div>
               </div>
@@ -64,7 +64,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="nav-link">
                   <p class="mb-0">Signed in as</p>
                   <b>
                     <%= user.username %>
@@ -82,10 +82,10 @@
               </li>
               <li><a class="dropdown-item" href="/setting/account">Setting</a></li>
               <li>
-                <a class="dropdown-item">English <i class="las la-globe"></i></a>
+                <a class="nav-link">English <i class="las la-globe"></i></a>
               </li>
               <li>
-                <a class="dropdown-item"><i class="las la-rupee-sign"> </i>INR</i></a>
+                <a class="nav-link"><i class="las la-rupee-sign"> </i>INR</i></a>
               </li>
               <li>
                 <hr class="dropdown-divider">
@@ -93,7 +93,7 @@
               <li>
                 <!-- here form is used because we want to do post request on /logout route -->
                 <form id="logout" action="/logout" method="post">
-                  <a onclick="document.getElementById('logout').submit()" class="nav-link" href="#">Logout</a>
+                  <a onclick="document.getElementById('logout').submit()" class="nav-link dropdown-item" href="#">Logout</a>
                 </form>
               </li>
             </ul>
