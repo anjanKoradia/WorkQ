@@ -2,7 +2,12 @@
 
 <section class="all_works_container">
   <div class="container py-5">
-    <h4>All Volunteering Works :</h4>
+    <% if(works.length == 0){ %>
+    <div class="no_data">
+      <h4>Opps! No Data Found.</h4>
+      <img src="/images/no_data.png" alt="" />
+    </div>
+    <% } %>
     <div class="row row-cols-md-4 g-5 py-4">
       <% works.forEach((work) => { %>
       <div class="col">
