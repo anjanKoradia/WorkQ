@@ -40,9 +40,12 @@ function initRoutes(app) {
     app.post("/setting/security", securityController().changePassword);
 
 
-    // Post volunteering work
+    // Post work
     app.get("/volunteering/work/post", user, workController().index);
     app.post("/volunteering/work/post", workController().postWork);
+
+    // Post work
+    app.post("/volunteering/work/accept/:id", workController().acceptWork);
 
 
     // Work categories

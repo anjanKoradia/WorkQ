@@ -97,6 +97,17 @@ function workController() {
 
             return res.redirect("/");
         },
+
+        acceptWork: async (req, res) => {
+            const work = await Work.findById(req.params.id);
+
+            work.accepted = true;
+            work.accepted_by = req.user._id;
+
+            work.save();
+
+            return res.redirect("/volunteering/work/accepted");
+        }
     }
 }
 

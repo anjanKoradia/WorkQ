@@ -15,7 +15,7 @@ const workSchema = new Schema(
         subcategory: { type: String },
         accepted: { type: Boolean, default: false },
         accepted_by: {
-            type: mongoose.Schema.Types.Date,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "User",
         }
     },
