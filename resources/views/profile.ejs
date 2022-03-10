@@ -100,7 +100,13 @@
                           class="dropdown-menu"
                           aria-labelledby="dropdownMenuLink"
                         >
-                          <li><a class="dropdown-item" href="#">View</a></li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="/volunteering/work/category/<%= work.category %>/<%= work._id %>"
+                              >View</a
+                            >
+                          </li>
                           <li><a class="dropdown-item" href="#">Edit</a></li>
                         </ul>
                       </div>

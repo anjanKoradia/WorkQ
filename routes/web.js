@@ -36,7 +36,7 @@ function initRoutes(app) {
     // setting
     app.get("/setting/account", user, accountController().index);
     app.post("/setting/account", accountController().postData);
-    app.post("/setting/account/deactivate", accountController().deactivate)
+    app.post("/setting/account/deactivate", accountController().deactivate);
 
     // security
     app.get("/setting/security", user, securityController().index);
@@ -49,7 +49,6 @@ function initRoutes(app) {
 
     // Accept work
     app.post("/volunteering/work/accept/:id", workController().acceptWork);
-
 
 
     // Work categories

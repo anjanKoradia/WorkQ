@@ -21,7 +21,8 @@
           <h1 class="col-sm-4">Sub-Category :</h1>
           <p class="col-sm-8 mb-0"><%= work.subcategory %></p>
         </div>
-        <% if(work.accepted == false){ %>
+        <% if((work.accepted == false) && (work.posted_by.toString() !==
+        user._id.toString())){ %>
         <form
           id="accept_work"
           action="/volunteering/work/accept/<%= work._id %>"

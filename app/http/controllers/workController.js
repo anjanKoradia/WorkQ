@@ -93,8 +93,6 @@ function workController() {
         workDetails: async (req, res) => {
             const work = await Work.findById(req.params.id);
 
-            console.log(work);
-
             if (work) {
                 return res.render("work/workDetails", { work: work });
             }
