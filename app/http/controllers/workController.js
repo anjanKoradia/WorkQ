@@ -1,4 +1,4 @@
-const handleMultipartData = require("../../config/multer");
+const handleMultipartData = require("../../config/multer/workImg");
 const workDetailsValidator = require("../../validator/workValidator");
 const fs = require("fs");
 const Work = require("../../models/work");
