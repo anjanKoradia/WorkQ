@@ -31,6 +31,7 @@ function initRoutes(app) {
     app.get("/pofile", profileController().index);
     app.get("/pofile/mywork/posted", user, workController().postedWorks);
     app.get("/pofile/mywork/accepted", workController().acceptedWork);
+    app.post("/pofile/mywork/posted/:id", workController().deleteWork);
 
 
     // setting

@@ -47,9 +47,17 @@
                   <li><a class="dropdown-item" href="#">Edit</a></li>
                 </ul>
               </div>
-              <a href="#" class="btn btn-danger"
-                ><i class="las la-trash"></i> Delete</a
+              <form
+                action="/pofile/mywork/posted/<%= work._id %>"
+                method="post"
+                id="deleteWork"
               >
+                <a
+                  class="btn btn-danger"
+                  onclick="document.getElementById('deleteWork').submit()"
+                  ><i class="las la-trash"></i> Delete</a
+                >
+              </form>
             </div>
           </div>
         </div>

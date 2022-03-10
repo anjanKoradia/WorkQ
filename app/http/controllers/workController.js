@@ -115,6 +115,12 @@ function workController() {
             // console.log(works);
             return res.render("work/accepted", { works: works });
         },
+
+        deleteWork: async (req, res) => {
+            const work = await Work.findByIdAndDelete(req.params.id);
+
+            return res.redirect("/pofile/mywork/posted")
+        }
     }
 }
 
