@@ -319,3 +319,91 @@ button {
   }
 }
 /* -------------------- Work Page Styling End -------------------- */
+
+/* -------------------- Profile Page Styling Start -------------------- */
+.profile_container {
+  background-color: whitesmoke;
+  min-height: calc(100vh - 75px);
+
+  .left_side {
+    flex: 0.3;
+    background-color: white;
+    border: rgb(231, 229, 229) solid 1px;
+    border-radius: 5px;
+
+    .profile_img {
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-size: cover !important;
+        background-position: 50% 50% !important;
+      }
+    }
+  }
+
+  .right_side {
+    flex: 0.6;
+
+    .nav {
+      background-color: white;
+      border: rgb(231, 229, 229) solid 1px;
+      border-radius: 5px;
+
+      .nav-link {
+        color: #0000008c;
+      }
+
+      .nav-link.active,
+      .show > .nav-link {
+        background-color: transparent;
+        color: #000000;
+        border-bottom: 2px solid green !important;
+      }
+    }
+
+    .tab-content {
+      .card {
+        img {
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .card-body {
+          > p {
+            font-size: 20px;
+          }
+
+          .owener {
+            img {
+              width: 25px;
+              height: 25px;
+            }
+            .owener_details {
+              p {
+                font-size: 14px;
+
+                &:nth-child(2) {
+                  color: #0000008c;
+                }
+              }
+            }
+          }
+
+          .work_details {
+            > p {
+              font-size: 20px;
+            }
+          }
+
+          .dropdown {
+            i {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------- Profile Page Styling End -------------------- */

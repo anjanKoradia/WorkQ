@@ -8,6 +8,7 @@ const workController = require("../app/http/controllers/workController");
 // Middleware
 const guest = require("../app/http/middleware/guest");
 const user = require("../app/http/middleware/user");
+const profileController = require("../app/http/controllers/profileController");
 
 function initRoutes(app) {
 
@@ -27,6 +28,7 @@ function initRoutes(app) {
     app.post("/logout", loginController().logout);
 
     // profile
+    app.get("/pofile", profileController().index);
     app.get("/pofile/mywork/posted", user, workController().postedWorks);
     app.get("/pofile/mywork/accepted", workController().acceptedWork);
 
