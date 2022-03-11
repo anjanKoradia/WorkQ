@@ -9,7 +9,9 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _work__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./work */ "./resources/js/work.js");
+/* harmony import */ var _profile__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile */ "./resources/js/profile.js");
+/* harmony import */ var _work__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./work */ "./resources/js/work.js");
+
  // For Tooltip
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -17,7 +19,71 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl);
 }); // Volunteering Work
 
-(0,_work__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_work__WEBPACK_IMPORTED_MODULE_1__["default"])(); // profile
+
+(0,_profile__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+/***/ }),
+
+/***/ "./resources/js/profile.js":
+/*!*********************************!*\
+  !*** ./resources/js/profile.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ profile)
+/* harmony export */ });
+var imgDropZone = document.querySelector(".user_profile");
+var editImgBtn = document.querySelector(".edit_img_btn");
+var fileInput = document.querySelector("#imageInput");
+
+function updateImg(file) {
+  var thumbnailElement = imgDropZone.querySelector(".drop_zone_thumb");
+
+  if (imgDropZone.querySelector(".la-user")) {
+    imgDropZone.querySelector(".la-user").remove();
+  }
+
+  if (imgDropZone.querySelector(".profile_img")) {
+    imgDropZone.querySelector(".profile_img").remove();
+  }
+
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop_zone_thumb");
+    imgDropZone.appendChild(thumbnailElement);
+  } // Show thumbnail for image files
+
+
+  if (file.type.startsWith("image/")) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      thumbnailElement.style.backgroundImage = "url('".concat(reader.result, "')");
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+
+function profile() {
+  if (editImgBtn) {
+    editImgBtn.addEventListener("click", function () {
+      fileInput.click();
+    });
+  }
+
+  if (fileInput) {
+    fileInput.addEventListener("change", function (e) {
+      if (fileInput.files.length) {
+        updateImg(fileInput.files[0]);
+      }
+    });
+  }
+}
 
 /***/ }),
 

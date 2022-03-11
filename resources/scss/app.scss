@@ -143,6 +143,47 @@ button {
     border-radius: 5px;
   }
   .account_details {
+    .user_profile {
+      position: relative;
+      margin: auto;
+      width: 150px;
+      height: 150px;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .la-user {
+        font-size: 150px;
+        background-color: #000000;
+        border-radius: 50%;
+        color: white;
+      }
+
+      .edit_img_btn {
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+        border: rgb(231, 229, 229) solid 2px;
+
+        .la-pen {
+          font-size: 20px;
+        }
+      }
+
+      .drop_zone_thumb {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
     form {
       label {
         text-transform: capitalize;
@@ -331,13 +372,23 @@ button {
     border: rgb(231, 229, 229) solid 1px;
     border-radius: 5px;
 
-    .profile_img {
+    .profile_img_container {
       img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         background-size: cover !important;
         background-position: 50% 50% !important;
+      }
+
+      .la-user {
+        font-size: 150px;
+      }
+
+      &:hover {
+        .change_user_profile_form {
+          visibility: visible;
+        }
       }
     }
   }

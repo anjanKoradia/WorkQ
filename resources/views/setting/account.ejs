@@ -47,7 +47,28 @@
           >
         </p>
         <hr class="dropdown-divider my-4" />
-        <form method="POST" action="/setting/account" class="mt-5">
+        <div class="user_profile">
+          <% if(user.details.image){ %>
+          <img class="profile_img" src="/<%= user.details.image %>" alt="" />
+          <% } else { %>
+          <i class="las la-user"></i>
+          <% } %>
+          <button class="edit_img_btn btn btn-light p-1">
+            <i class="las la-pen"></i> Edit
+          </button>
+        </div>
+        <form
+          method="POST"
+          action="/setting/account"
+          enctype="multipart/form-data"
+          class="mt-5"
+        >
+          <input
+            type="file"
+            name="profile_img"
+            id="imageInput"
+            class="d-none"
+          />
           <div class="row mb-3">
             <label for="inputUsername" class="col-sm-4 col-form-label"
               >Username</label
@@ -56,7 +77,7 @@
               <input
                 type="text"
                 name="username"
-                value="<%= user.username%>"
+                value="<%= user.username %>"
                 class="form-control"
                 id="inputUsername"
               />

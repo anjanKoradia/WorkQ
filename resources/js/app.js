@@ -1,3 +1,4 @@
+import profile from "./profile";
 import work from "./work"
 
 // For Tooltip
@@ -8,3 +9,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 // Volunteering Work
 work();
+
+// profile
+profile();

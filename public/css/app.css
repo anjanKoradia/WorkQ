@@ -124,6 +124,49 @@ button {
   border: #e7e5e5 solid 1px;
   border-radius: 5px;
 }
+.account_container .account_details .user_profile,
+.security_container .account_details .user_profile {
+  position: relative;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+}
+.account_container .account_details .user_profile img,
+.security_container .account_details .user_profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.account_container .account_details .user_profile .la-user,
+.security_container .account_details .user_profile .la-user {
+  font-size: 150px;
+  background-color: #000000;
+  border-radius: 50%;
+  color: white;
+}
+.account_container .account_details .user_profile .edit_img_btn,
+.security_container .account_details .user_profile .edit_img_btn {
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
+  border: #e7e5e5 solid 2px;
+}
+.account_container .account_details .user_profile .edit_img_btn .la-pen,
+.security_container .account_details .user_profile .edit_img_btn .la-pen {
+  font-size: 20px;
+}
+.account_container .account_details .user_profile .drop_zone_thumb,
+.security_container .account_details .user_profile .drop_zone_thumb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .account_container .account_details form label,
 .security_container .account_details form label {
   text-transform: capitalize;
@@ -278,12 +321,18 @@ button {
   border: #e7e5e5 solid 1px;
   border-radius: 5px;
 }
-.profile_container .left_side .profile_img img {
+.profile_container .left_side .profile_img_container img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-size: cover !important;
   background-position: 50% 50% !important;
+}
+.profile_container .left_side .profile_img_container .la-user {
+  font-size: 150px;
+}
+.profile_container .left_side .profile_img_container:hover .change_user_profile_form {
+  visibility: visible;
 }
 .profile_container .right_side {
   flex: 0.6;

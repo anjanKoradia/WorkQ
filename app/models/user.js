@@ -8,6 +8,7 @@ const userSchema = new Schema(
         password: { type: String, require: true },
         details: {
             name: { type: String, require: true },
+            image: { type: String },
             address: { type: String, require: true },
             city: { type: String, require: true },
             state: { type: String, require: true },
