@@ -28,10 +28,10 @@ function initRoutes(app) {
     app.post("/logout", loginController().logout);
 
     // profile
-    app.get("/pofile", profileController().index);
-    app.get("/pofile/mywork/posted", user, workController().postedWorks);
-    app.get("/pofile/mywork/accepted", workController().acceptedWork);
-    app.post("/pofile/mywork/posted/:id", workController().deleteWork);
+    app.get("/profile", profileController().index);
+    app.get("/profile/mywork/posted", user, workController().postedWorks);
+    app.get("/profile/mywork/accepted", workController().acceptedWork);
+    app.post("/profile/mywork/posted/:id", workController().deleteWork);
 
 
     // setting
