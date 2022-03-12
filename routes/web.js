@@ -28,9 +28,9 @@ function initRoutes(app) {
     app.post("/logout", loginController().logout);
 
     // profile
-    app.get("/profile", profileController().index);
+    app.get("/profile", user, profileController().index);
     app.get("/profile/mywork/posted", user, workController().postedWorks);
-    app.get("/profile/mywork/accepted", workController().acceptedWork);
+    app.get("/profile/mywork/accepted", user, workController().acceptedWork);
     app.post("/profile/mywork/posted/:id", workController().deleteWork);
 
 
