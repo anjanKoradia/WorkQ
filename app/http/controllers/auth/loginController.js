@@ -35,7 +35,7 @@ function loginController() {
                         return next(error);
                     }
 
-                    return res.redirect("/");
+                    return res.redirect("/setting/account");
                 });
             })(req, res, next);
         },

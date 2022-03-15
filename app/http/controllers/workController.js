@@ -64,7 +64,7 @@ function workController() {
                     return res.redirect("/volunteering/work/post");
                 }
 
-                return res.redirect("/pofile/mywork/posted");
+                return res.redirect("/profile/mywork/posted");
             })
         },
         acceptWork: async (req, res) => {
@@ -75,7 +75,7 @@ function workController() {
 
             work.save();
 
-            return res.redirect("/pofile/mywork/accepted");
+            return res.redirect("/profile/mywork/accepted");
         },
 
         // Display all works and details by their category
@@ -119,7 +119,7 @@ function workController() {
         deleteWork: async (req, res) => {
             const work = await Work.findByIdAndDelete(req.params.id);
 
-            return res.redirect("/pofile/mywork/posted")
+            return res.redirect("/profile/mywork/posted")
         }
     }
 }
