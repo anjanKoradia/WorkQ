@@ -328,18 +328,44 @@ button {
 }
 /* -------------------- All Works Page Styling End -------------------- */
 
-/* -------------------- Work Page Styling Start -------------------- */
+/* -------------------- Work Details Page Styling Start -------------------- */
 .work_details_container {
   background-color: whitesmoke;
 
   .container {
     min-height: calc(100vh - 75px);
 
-    .work_img {
+    .left_side {
       flex: 0.3;
-      border-radius: 10px;
-      height: 300px;
-      object-fit: cover;
+
+      .work_img {
+        border-radius: 10px;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .accepted_by_users {
+        background-color: white;
+        border: rgb(231, 229, 229) solid 1px;
+        border-radius: 5px;
+        max-height: 400px;
+        overflow-y: scroll;
+
+        .user_details {
+          img {
+            width: 35px;
+            height: 35px;
+          }
+          div {
+            p {
+              &:nth-child(2) {
+                color: #0000008c;
+              }
+            }
+          }
+        }
+      }
     }
 
     .work_detail {

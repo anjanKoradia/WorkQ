@@ -16,14 +16,13 @@
           <div class="card-body border-top">
             <div class="owener d-flex align-items-center">
               <img
-                src="/<%= work.accepted_by.details.image %>"
+                src="/<%= user.details.image %>"
                 class="rounded-circle me-2"
               />
               <div class="owener_details">
-                <p class="mb-0 fw-bold"><%= work.accepted_by.username %></p>
+                <p class="mb-0 fw-bold"><%= user.username %></p>
                 <p class="mb-0">
-                  <%= work.accepted_by.details.city %>, <%=
-                  work.accepted_by.details.state %>
+                  <%= user.details.city %>, <%= user.details.state %>
                 </p>
               </div>
             </div>

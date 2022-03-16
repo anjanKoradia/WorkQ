@@ -42,7 +42,7 @@ function workController() {
                     return res.redirect("/volunteering/work/post")
                 }
 
-                const { title, description, category, subcategory } = req.body;
+                const { title, description, volunteer_count, category, subcategory } = req.body;
 
                 try {
                     await Work.create({
@@ -50,6 +50,7 @@ function workController() {
                         image: `images/works/${fileName}`,
                         title,
                         description,
+                        volunteer_count,
                         category,
                         subcategory
                     });
@@ -69,10 +70,26 @@ function workController() {
         },
         acceptWork: async (req, res) => {
             const work = await Work.findById(req.params.id);
+            let flag = false;
 
-            work.accepted = true;
-            work.accepted_by = req.user._id;
+            work.accepted_by.forEach(val => {
+                if (JSON.stringify(val._id) == JSON.stringify(req.user._id)) {
+                    flag = true;
+                }
+            })
 
+            if (flag) {
+                req.flash("error", "Alredy accepted a work.")
+                return res.redirect(`/volunteering/work/category/${work.category}/${work._id}`)
+            }
+
+            if (work.volunteer_count > 0) {
+                work.volunteer_count -= 1;
+                work.accepted_by.push(req.user._id);
+            }
+            if (work.volunteer_count == 0) {
+                work.accepted = true;
+            }
             work.save();
 
             return res.redirect("/profile/mywork/accepted");
@@ -91,7 +108,9 @@ function workController() {
             return res.render("work/category", { works: works });
         },
         workDetails: async (req, res) => {
-            const work = await Work.findById(req.params.id);
+            const work = await Work.findById(req.params.id).populate("accepted_by");
+
+            console.log(work)
 
             if (work) {
                 return res.render("work/workDetails", { work: work });
@@ -105,15 +124,25 @@ function workController() {
             const works = await Work.find({ posted_by: req.user._id, accepted: false }, null, {
                 sort: { createdAt: -1 },
             })
+
             return res.render("work/posted", { works: works });
         },
         acceptedWork: async (req, res) => {
-            const works = await Work.find({ accepted_by: req.user._id, accepted: true }, null, {
+            const works = await Work.find({ accepted_by: { _id: req.user._id } }, null, {
                 sort: { createdAt: -1 },
             }).populate("accepted_by");
 
-            // console.log(works);
-            return res.render("work/accepted", { works: works });
+            let User = null;
+
+            works.forEach(work => {
+                work.accepted_by.forEach(user => {
+                    if (JSON.stringify(user._id) == JSON.stringify(req.user._id)) {
+                        User = user
+                    }
+                })
+            })
+
+            return res.render("work/accepted", { works: works, user: User });
         },
 
         deleteWork: async (req, res) => {

@@ -280,19 +280,36 @@ button {
 }
 
 /* -------------------- All Works Page Styling End -------------------- */
-/* -------------------- Work Page Styling Start -------------------- */
+/* -------------------- Work Details Page Styling Start -------------------- */
 .work_details_container {
   background-color: whitesmoke;
 }
 .work_details_container .container {
   min-height: calc(100vh - 75px);
 }
-.work_details_container .container .work_img {
+.work_details_container .container .left_side {
   flex: 0.3;
+}
+.work_details_container .container .left_side .work_img {
   border-radius: 10px;
+  width: 100%;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.work_details_container .container .left_side .accepted_by_users {
+  background-color: white;
+  border: #e7e5e5 solid 1px;
+  border-radius: 5px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.work_details_container .container .left_side .accepted_by_users .user_details img {
+  width: 35px;
+  height: 35px;
+}
+.work_details_container .container .left_side .accepted_by_users .user_details div p:nth-child(2) {
+  color: #0000008c;
 }
 .work_details_container .container .work_detail {
   flex: 0.6;

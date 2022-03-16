@@ -2,8 +2,38 @@
 
 <section class="work_details_container">
   <div class="container w-75 py-5">
+    <% if(messages.error){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= messages.error %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %>
     <div class="d-flex align-items-start justify-content-between">
-      <img src="/<%= work.image %>" alt="" class="work_img" />
+      <div class="left_side">
+        <img src="/<%= work.image %>" alt="" class="work_img" />
+        <% if(JSON.stringify(work.posted_by) === JSON.stringify(user._id)) { %>
+        <div class="accepted_by_users my-4 p-3">
+          <h5>Work Accepted By :</h5>
+          <hr />
+          <% work.accepted_by.forEach(user => { %>
+          <div class="user_details d-flex align-items-center my-3">
+            <img src="/<%= user.details.image %>" class="rounded-circle me-2" />
+            <div>
+              <p class="mb-0 fw-bold"><%= user.username %></p>
+              <p class="mb-0">
+                <%= user.details.city %>, <%= user.details.state %>
+              </p>
+            </div>
+          </div>
+          <%}) %>
+        </div>
+        <% } %>
+      </div>
       <div class="work_detail p-5">
         <div class="row mb-3">
           <h1 class="col-sm-4">Title :</h1>
@@ -12,6 +42,10 @@
         <div class="row mb-3">
           <h1 class="col-sm-4">Description :</h1>
           <p class="col-sm-8 mb-0"><%= work.description %></p>
+        </div>
+        <div class="row mb-3">
+          <h1 class="col-sm-4">No. of volunteer required :</h1>
+          <p class="col-sm-8 mb-0"><%= work.volunteer_count %></p>
         </div>
         <div class="row mb-3">
           <h1 class="col-sm-4">Category :</h1>

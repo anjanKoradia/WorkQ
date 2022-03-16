@@ -8,16 +8,20 @@ const workSchema = new Schema(
             ref: "User",
             require: true,
         },
-        image: { type: String },
-        title: { type: String },
-        description: { type: String },
-        category: { type: String },
-        subcategory: { type: String },
-        accepted: { type: Boolean, default: false },
-        accepted_by: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-        }
+        image: { type: String, require: true },
+        title: { type: String, require: true },
+        description: { type: String, require: true },
+        volunteer_count: { type: Number, default: "1", require: true },
+        category: { type: String, require: true },
+        subcategory: { type: String, require: true },
+        accepted: { type: Boolean, default: false, require: true },
+        accepted_by: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "User",
+                unique: true
+            }
+        ]
     },
     { timestamps: true }
 );
